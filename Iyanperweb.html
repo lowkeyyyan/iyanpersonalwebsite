@@ -1,0 +1,2781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Iyan | Personal Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+:root{
+
+--bg:#050505;
+--card:#0f0f0f;
+
+--text:#bdbdbd;
+--white:#ffffff;
+
+--blue:#00aaff;
+--blue2:#0066ff;
+
+--border:rgba(255,255,255,.08);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:var(--bg);
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+180deg,
+#00aaff,
+#0066ff
+);
+
+border-radius:999px;
+
+}
+
+/* PROGRESS */
+
+#progress{
+
+position:fixed;
+
+top:0;
+left:0;
+
+height:4px;
+width:0;
+
+background:
+linear-gradient(
+90deg,
+#00aaff,
+#0066ff
+);
+
+z-index:999999;
+
+}
+
+/* PARTICLES */
+
+#particles{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-10;
+
+}
+
+/* CURSOR LIGHT */
+
+.cursor{
+
+position:fixed;
+
+width:350px;
+height:350px;
+
+border-radius:50%;
+
+pointer-events:none;
+
+background:
+radial-gradient(
+circle,
+rgba(0,170,255,.10),
+transparent 70%
+);
+
+transform:
+translate(-50%,-50%);
+
+z-index:-1;
+
+}
+
+/* NAVIGATION */
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:22px 8%;
+
+display:flex;
+
+justify-content:space-between;
+align-items:center;
+
+background:
+rgba(5,5,5,.75);
+
+backdrop-filter:blur(20px);
+
+border-bottom:
+1px solid var(--border);
+
+z-index:9999;
+
+}
+
+.logo{
+
+font-size:1.4rem;
+
+font-weight:800;
+
+letter-spacing:4px;
+
+color:var(--blue);
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:var(--blue);
+
+}
+
+.menu-btn{
+
+display:none;
+
+font-size:1.5rem;
+
+cursor:pointer;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+padding:120px 8%;
+
+}
+
+.hero-grid{
+
+max-width:1400px;
+
+width:100%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+1.1fr .9fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+.hero-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:12px 18px;
+
+border-radius:999px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid var(--border);
+
+margin-bottom:25px;
+
+}
+
+.hero-badge span{
+
+width:10px;
+height:10px;
+
+background:var(--blue);
+
+border-radius:50%;
+
+}
+
+.hero h1{
+
+font-size:6rem;
+
+font-weight:800;
+
+line-height:1.05;
+
+margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+background:
+linear-gradient(
+135deg,
+#00aaff,
+#5fd5ff,
+#0066ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.role{
+
+font-size:1.3rem;
+
+margin-bottom:20px;
+
+}
+
+.description{
+
+max-width:650px;
+
+line-height:2;
+
+color:var(--text);
+
+margin-bottom:25px;
+
+}
+
+#typing{
+
+height:40px;
+
+font-weight:600;
+
+color:var(--blue);
+
+margin-bottom:30px;
+
+}
+
+/* SOCIALS */
+
+.hero-socials{
+
+display:flex;
+
+gap:15px;
+
+margin-bottom:30px;
+
+}
+
+.hero-socials a{
+
+width:55px;
+height:55px;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+border-radius:50%;
+
+text-decoration:none;
+
+font-size:1.2rem;
+
+color:white;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid var(--border);
+
+transition:.3s;
+
+}
+
+.hero-socials a:hover{
+
+transform:
+translateY(-5px);
+
+color:var(--blue);
+
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:16px 32px;
+
+border-radius:999px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.primary{
+
+background:
+linear-gradient(
+135deg,
+#00aaff,
+#0066ff
+);
+
+color:white;
+
+}
+
+.secondary{
+
+color:white;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid var(--border);
+
+}
+
+.btn:hover{
+
+transform:
+translateY(-4px);
+
+}
+
+/* FAVORITE INFO */
+
+.quick-info{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:15px;
+
+margin-top:50px;
+
+}
+
+.quick-card{
+
+padding:20px;
+
+border-radius:25px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid var(--border);
+
+}
+
+.quick-card h3{
+
+font-size:1rem;
+
+margin-bottom:8px;
+
+color:var(--blue);
+
+}
+
+.quick-card p{
+
+font-size:.9rem;
+
+color:var(--text);
+
+}
+
+/* PROFILE */
+
+.profile-wrapper{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.profile-wrapper::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+rgba(0,170,255,.25),
+transparent
+);
+
+filter:blur(120px);
+
+}
+
+.profile{
+
+width:480px;
+height:620px;
+
+object-fit:cover;
+
+border-radius:35px;
+
+position:relative;
+
+z-index:2;
+
+border:
+1px solid var(--border);
+
+}
+
+/* GLOBAL */
+
+section{
+
+padding:120px 8%;
+
+}
+
+.section-title{
+
+font-size:3rem;
+
+text-align:center;
+
+margin-bottom:80px;
+
+}
+
+.section-title span{
+
+color:var(--blue);
+
+}
+
+.card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid var(--border);
+
+}
+
+/* SPOTLIGHT */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+height:250px;
+
+left:var(--x);
+top:var(--y);
+
+transform:
+translate(-50%,-50%);
+
+background:
+radial-gradient(
+circle,
+rgba(0,170,255,.15),
+transparent 70%
+);
+
+opacity:0;
+
+transition:.2s;
+
+pointer-events:none;
+
+}
+
+.card:hover::before{
+
+opacity:1;
+
+}
+
+/* REVEAL */
+
+.hidden{
+
+opacity:0;
+
+transform:
+translateY(40px);
+
+transition:.8s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+@media(max-width:950px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:4rem;
+
+}
+
+.profile{
+
+width:320px;
+height:420px;
+
+}
+
+.quick-info{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.nav-links{
+
+position:fixed;
+
+top:85px;
+right:-100%;
+
+width:280px;
+height:100vh;
+
+background:#090909;
+
+flex-direction:column;
+
+padding:40px;
+
+transition:.4s;
+
+}
+
+.nav-links.active{
+
+right:0;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<canvas id="particles"></canvas>
+
+<div class="cursor"></div>
+
+<nav>
+
+<div class="logo">
+IYAN
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#foods">Food</a></li>
+
+<li><a href="#desserts">Desserts</a></li>
+
+<li><a href="#games">Games</a></li>
+
+<li><a href="#music">Music</a></li>
+
+<li><a href="#anime">Anime</a></li>
+
+<li><a href="#experience">Work</a></li>
+
+</ul>
+
+<div class="menu-btn">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="hero-badge">
+
+<span></span>
+
+BSIT Student • CSR • Gamer
+
+</div>
+
+<h1>
+
+Hi, I'm
+
+<span>Iyan</span>
+
+</h1>
+
+<div class="role">
+
+Customer Service Representative
+
+</div>
+
+<p class="description">
+
+A BSIT student passionate about technology, gaming, music, anime, and web development. This website is my digital space where I share my favorite interests, experiences, and things I enjoy.
+
+</p>
+
+<div id="typing"></div>
+
+<div class="hero-socials">
+
+<a href="https://instagram.com/lowkeyyyan" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://github.com/lowkeyyyan" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://open.spotify.com/user/31g5dk4mtw7cxfjx6aynxafex24a?si=RiDW3KpqRhWJEBTUOL1Z9w" target="_blank">
+<i class="fa-brands fa-spotify"></i>
+</a>
+
+</div>
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn primary">
+Explore My Interests
+</a>
+
+<a href="#music" class="btn secondary">
+Spotify Corner
+</a>
+
+</div>
+
+<div class="quick-info">
+
+<div class="quick-card">
+<h3>Age</h3>
+<p>20</p>
+</div>
+
+<div class="quick-card">
+<h3>Section</h3>
+<p>BSIT 2-1</p>
+</div>
+
+<div class="quick-card">
+<h3>Location</h3>
+<p>Manila, Philippines</p>
+</div>
+
+<div class="quick-card">
+<h3>Zodiac Sign</h3>
+<p>Pisces</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="profile-wrapper">
+
+<img
+src="iyann.jpg"
+class="profile">
+
+</div>
+
+</div>
+
+</section>
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title hidden">
+About <span>Me</span>
+</h2>
+
+<div class="about-grid">
+
+<div class="card about-main hidden">
+
+<div class="about-header">
+
+<i class="fa-solid fa-user"></i>
+
+<h3>
+A Little About Me
+</h3>
+
+</div>
+
+<p>
+
+Hi! I'm Iyan, a BSIT student and Customer Service Representative with a strong interest in technology, gaming, anime, music, and web development.
+
+I enjoy exploring new things, learning new skills, and building creative projects that allow me to express myself.
+
+Outside of work and academics, you'll usually find me playing games, listening to music, watching anime, or experimenting with web design ideas.
+
+</p>
+
+</div>
+
+<div class="card about-side hidden">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<h4>
+Education
+</h4>
+
+<p>
+BS Information Technology
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-headphones"></i>
+
+<h4>
+Favorite Artist
+</h4>
+
+<p>
+wave to earth
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-gamepad"></i>
+
+<h4>
+Favorite Game
+</h4>
+
+<p>
+Genshin Impact
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAVORITES -->
+
+<section id="favorites">
+
+<h2 class="section-title hidden">
+Current <span>Favorites</span>
+</h2>
+
+<div class="favorites-grid">
+
+<div class="card favorite-card hidden">
+
+<i class="fa-solid fa-music"></i>
+
+<h3>
+Underatted Artists
+</h3>
+
+<p>
+3 Featured Artists
+</p>
+
+</div>
+
+<div class="card favorite-card hidden">
+
+<i class="fa-solid fa-tv"></i>
+
+<h3>
+My Top Anime
+</h3>
+
+<p>
+3 Top Animes
+</p>
+
+</div>
+
+<div class="card favorite-card hidden">
+
+<i class="fa-solid fa-gamepad"></i>
+
+<h3>
+Game Lists
+</h3>
+
+<p>
+6 Games Listed
+</p>
+
+</div>
+
+<div class="card favorite-card hidden">
+
+<i class="fa-solid fa-utensils"></i>
+
+<h3>
+Comfort Foods
+</h3>
+
+<p>
+Dishes and Desserts
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOD DISHES -->
+
+<section id="foods">
+
+<h2 class="section-title hidden">
+Favorite <span>Foods</span>
+</h2>
+
+<div class="food-grid">
+
+<div class="card food-card hidden">
+
+<img
+src="sng.png"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>Sinigang</h3>
+
+<p>
+
+The perfect comfort food with its signature sour and savory flavor.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="kare2.webp"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>Kare-Kare</h3>
+
+<p>
+
+Rich peanut sauce, tender meat, and bagoong make it unforgettable.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="adobo.jpg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>Chicken Adobo</h3>
+
+<p>
+
+A Filipino classic that never gets old.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="bicolex.jpg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>Bicol Express</h3>
+
+<p>
+
+Creamy, spicy, and rich with coconut flavor.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="monggo.jpg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>Monggo</h3>
+
+<p>
+
+Simple yet satisfying, especially on rainy days. Warm, hearty, and one of my favorite comfort foods.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="fishfillet.jpg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>Fish Fillet</h3>
+
+<p>
+
+Simple, satisfying, and easy to love.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DESSERTS -->
+
+<section id="desserts">
+
+<h2 class="section-title hidden">
+Favorite <span>Desserts</span>
+</h2>
+
+<div class="food-grid">
+
+<div class="card food-card hidden">
+
+<img
+src="cc.jpeg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>
+Cookies & Cream
+</h3>
+
+<p>
+
+My favorite ice cream flavor of all time.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="cheese.jpeg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>
+Cheesecake
+</h3>
+
+<p>
+
+Creamy, rich, and impossible to resist.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="ss.jpeg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>
+Strawberry Desserts
+</h3>
+
+<p>
+
+Sweet, fruity, and refreshing.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="brownies.webp"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>
+Brownies
+</h3>
+
+<p>
+
+Chocolate heaven in every bite.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="rengoku.webp"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>
+Donuts
+</h3>
+
+<p>
+
+Perfect for any time of the day.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card food-card hidden">
+
+<img
+src="cm.jpg"
+class="food-image clickable">
+
+<div class="food-info">
+
+<h3>
+Chocolate Mousse
+</h3>
+
+<p>
+
+Smooth, airy, and indulgent.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ABOUT */
+
+.about-grid{
+
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:30px;
+
+}
+
+.about-main{
+
+padding:40px;
+
+}
+
+.about-header{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.about-header i{
+
+font-size:2rem;
+color:var(--blue);
+
+}
+
+.about-main p{
+
+line-height:2;
+color:var(--text);
+
+}
+
+.about-side{
+
+display:flex;
+flex-direction:column;
+gap:20px;
+
+}
+
+.mini-card{
+
+padding:25px;
+
+border-radius:25px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid var(--border);
+
+}
+
+.mini-card i{
+
+font-size:1.5rem;
+color:var(--blue);
+
+margin-bottom:15px;
+
+}
+
+.mini-card p{
+
+color:var(--text);
+margin-top:10px;
+
+}
+
+/* FAVORITES */
+
+.favorites-grid{
+
+display:grid;
+grid-template-columns:
+repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.favorite-card{
+
+padding:35px;
+
+text-align:center;
+
+}
+
+.favorite-card i{
+
+font-size:2rem;
+color:var(--blue);
+
+margin-bottom:20px;
+
+}
+
+.favorite-card p{
+
+margin-top:10px;
+color:var(--text);
+
+}
+
+/* FOODS */
+
+.food-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(340px,1fr));
+
+gap:30px;
+
+}
+
+.food-card{
+
+overflow:hidden;
+
+}
+
+.food-image{
+
+width:100%;
+height:280px;
+
+object-fit:cover;
+
+transition:.5s;
+cursor:pointer;
+
+}
+
+.food-card:hover .food-image{
+
+transform:scale(1.08);
+
+}
+
+.food-info{
+
+padding:25px;
+
+}
+
+.food-info h3{
+
+margin-bottom:10px;
+
+}
+
+.food-info p{
+
+line-height:1.8;
+color:var(--text);
+
+}
+
+@media(max-width:950px){
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.favorites-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
+
+</style>
+<!-- GAMES -->
+
+<section id="games">
+
+<h2 class="section-title hidden">
+Favorite <span>Games</span>
+</h2>
+
+<div class="games-grid">
+
+<!-- PROJECT SEKAI -->
+
+<div class="card game-card hidden">
+
+<img
+src="psjkk.webp"
+class="game-image clickable">
+
+<div class="game-content">
+
+<div class="game-type">
+Rhythm Game
+</div>
+
+<h3>
+Project SEKAI
+</h3>
+
+<p>
+
+My favorite game. I love the music, stories, events, and character interactions.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- GENSHIN -->
+
+<div class="card game-card hidden">
+
+<img
+src="gi.webp"
+class="game-image clickable">
+
+<div class="game-content">
+
+<div class="game-type">
+Open World RPG
+</div>
+
+<h3>
+Genshin Impact
+</h3>
+
+<p>
+
+Beautiful environments, amazing soundtracks, and endless exploration.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- MINECRAFT -->
+
+<div class="card game-card hidden">
+
+<img
+src="mc.webp"
+class="game-image clickable">
+
+<div class="game-content">
+
+<div class="game-type">
+Sandbox
+</div>
+
+<h3>
+Minecraft
+</h3>
+
+<p>
+
+A game where creativity has no limits.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- BRAWL STARS -->
+
+<div class="card game-card hidden">
+
+<img
+src="bs.jpg"
+class="game-image clickable">
+
+<div class="game-content">
+
+<div class="game-type">
+Multiplayer
+</div>
+
+<h3>
+Brawl Stars
+</h3>
+
+<p>
+
+Quick matches, fun characters, and competitive gameplay.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- MOBILE LEGENDS -->
+
+<div class="card game-card hidden">
+
+<img
+src="mlbb.jpg"
+class="game-image clickable">
+
+<div class="game-content">
+
+<div class="game-type">
+MOBA
+</div>
+
+<h3>
+Mobile Legends
+</h3>
+
+<p>
+
+One of my favorite games to play with friends.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ROBLOX -->
+
+<div class="card game-card hidden">
+
+<img
+src="rblx.png"
+class="game-image clickable">
+
+<div class="game-content">
+
+<div class="game-type">
+Creative Platform
+</div>
+
+<h3>
+Roblox
+</h3>
+
+<p>
+
+Thousands of experiences and unlimited creativity.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<section id="music">
+
+<h2 class="section-title hidden">
+Favorite <span>Music</span>
+</h2>
+
+<div class="music-layout">
+
+<div class="music-intro card hidden">
+
+<h3>
+Music Corner
+</h3>
+
+<p>
+
+Music is one of the biggest parts of my daily life. Whether I'm studying, relaxing, gaming, or working, there's always something playing in the background.
+
+</p>
+
+</div>
+
+<div class="artists-grid">
+
+<!-- WAVE TO EARTH -->
+
+<div class="card artist-card hidden">
+
+<img
+src="w2e.jpeg"
+class="artist-image clickable">
+
+<div class="artist-content">
+
+<h3>
+wave to earth
+</h3>
+
+<p>
+Favorite Song
+</p>
+
+<h4>
+seasons
+</h4>
+
+</div>
+
+</div>
+
+<!-- ARCTIC -->
+
+<div class="card artist-card hidden">
+
+<img
+src="arc.png"
+class="artist-image clickable">
+
+<div class="artist-content">
+
+<h3>
+Arctic Monkeys
+</h3>
+
+<p>
+Favorite Song
+</p>
+
+<h4>
+Party Anthem
+</h4>
+
+</div>
+
+</div>
+
+<!-- RICKY -->
+
+<div class="card artist-card hidden">
+
+<img
+src="rm.jpeg"
+class="artist-image clickable">
+
+<div class="artist-content">
+
+<h3>
+Ricky Montgomery
+</h3>
+
+<p>
+Favorite Song
+</p>
+
+<h4>
+Mr. Loverman
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SPOTIFY -->
+
+<div class="card spotify-section hidden">
+
+<div class="spotify-top">
+
+<i class="fa-brands fa-spotify"></i>
+
+<h3>
+Spotify Corner
+</h3>
+
+</div>
+
+<p>
+
+Explore my Spotify profile and discover some of the music I enjoy listening to.
+
+</p>
+
+<iframe
+style="border-radius:20px"
+src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M"
+width="100%"
+height="380"
+frameborder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+
+</iframe>
+
+<div class="spotify-actions">
+
+<a
+href="https://open.spotify.com/user/31g5dk4mtw7cxfjx6aynxafex24a?si=RiDW3KpqRhWJEBTUOL1Z9w"
+target="_blank"
+class="spotify-btn">
+
+Open My Spotify
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* GAMES */
+
+.games-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(340px,1fr));
+
+gap:30px;
+
+}
+
+.game-card{
+
+overflow:hidden;
+
+}
+
+.game-image{
+
+width:100%;
+height:260px;
+
+object-fit:cover;
+
+transition:.5s;
+
+cursor:pointer;
+
+}
+
+.game-card:hover .game-image{
+
+transform:scale(1.08);
+
+}
+
+.game-content{
+
+padding:25px;
+
+}
+
+.game-type{
+
+display:inline-block;
+
+padding:8px 15px;
+
+border-radius:999px;
+
+background:
+rgba(0,170,255,.12);
+
+color:var(--blue);
+
+font-size:.85rem;
+
+margin-bottom:15px;
+
+}
+
+.game-content p{
+
+margin-top:12px;
+
+line-height:1.8;
+
+color:var(--text);
+
+}
+
+/* MUSIC */
+
+.music-layout{
+
+display:flex;
+
+flex-direction:column;
+
+gap:35px;
+
+}
+
+.music-intro{
+
+padding:35px;
+
+text-align:center;
+
+}
+
+.music-intro p{
+
+margin-top:15px;
+
+color:var(--text);
+
+line-height:1.9;
+
+}
+
+.artists-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+
+}
+
+.artist-card{
+
+overflow:hidden;
+
+}
+
+.artist-image{
+
+width:100%;
+height:280px;
+
+object-fit:cover;
+
+}
+
+.artist-content{
+
+padding:25px;
+
+text-align:center;
+
+}
+
+.artist-content p{
+
+margin-top:10px;
+
+color:var(--text);
+
+}
+
+.artist-content h4{
+
+margin-top:10px;
+
+color:var(--blue);
+
+}
+
+/* SPOTIFY */
+
+.spotify-section{
+
+padding:35px;
+
+}
+
+.spotify-top{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:20px;
+
+}
+
+.spotify-top i{
+
+font-size:2rem;
+
+color:#1DB954;
+
+}
+
+.spotify-section p{
+
+margin-bottom:25px;
+
+line-height:1.8;
+
+color:var(--text);
+
+}
+
+.spotify-actions{
+
+margin-top:25px;
+
+}
+
+.spotify-btn{
+
+display:inline-block;
+
+padding:15px 28px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#1DB954,
+#179e49
+);
+
+}
+
+@media(max-width:950px){
+
+.artists-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+<!-- ANIME -->
+
+<section id="anime">
+
+<h2 class="section-title hidden">
+Favorite <span>Anime</span>
+</h2>
+
+<div class="anime-grid">
+
+<div class="card anime-card hidden">
+
+<img
+src="ft.jpg"
+class="anime-image clickable">
+
+<div class="anime-content">
+
+<h3>Fairy Tail</h3>
+
+<p>
+My all-time favorite anime because of its strong friendships, memorable characters, and emotional story arcs.
+</p>
+
+</div>
+
+</div>
+
+<div class="card anime-card hidden">
+
+<img
+src="ds.webp"
+class="anime-image clickable">
+
+<div class="anime-content">
+
+<h3>Demon Slayer</h3>
+
+<p>
+One of the most visually stunning anime series with incredible animation and action scenes.
+</p>
+
+</div>
+
+</div>
+
+<div class="card anime-card hidden">
+
+<img
+src="sk8.jpg"
+class="anime-image clickable">
+
+<div class="anime-content">
+
+<h3>SK8 The Infinity</h3>
+
+<p>
+A fun and energetic anime filled with unique characters and exciting skateboarding competitions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+<h2 class="section-title hidden">
+Work <span>Experience</span>
+</h2>
+
+<div class="card experience-card hidden">
+
+<div class="experience-icon">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+<h3>
+Customer Service Representative
+</h3>
+
+<p>
+
+Experienced in handling customer inquiries, resolving concerns, processing requests, and delivering excellent customer experiences through effective communication and problem-solving.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- WEBSITE -->
+
+<section id="website">
+
+<h2 class="section-title hidden">
+About This <span>Website</span>
+</h2>
+
+<div class="card website-card hidden">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>
+Built Using HTML, CSS & JavaScript
+</h3>
+
+<p>
+
+This website was designed and developed as a personal project to showcase my interests, favorite games, music, anime, food, experiences, and creativity while practicing front-end web development.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>IYAN</h2>
+
+<p>
+BSIT Student • Customer Service Representative
+</p>
+
+<div class="footer-socials">
+
+<a href="https://instagram.com/lowkeyyyan" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://github.com/lowkeyyyan" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://open.spotify.com/user/31g5dk4mtw7cxfjx6aynxafex24a" target="_blank">
+<i class="fa-brands fa-spotify"></i>
+</a>
+
+</div>
+
+<p class="footer-bottom">
+
+Made by Iyan using HTML, CSS & JavaScript
+
+</p>
+
+</footer>
+
+<!-- IMAGE MODAL -->
+
+<div id="imageModal">
+
+<span id="closeModal">&times;</span>
+
+<img id="modalImage">
+
+</div>
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<style>
+
+/* ANIME */
+
+.anime-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+.anime-card{
+
+overflow:hidden;
+
+}
+
+.anime-image{
+
+width:100%;
+height:340px;
+
+object-fit:cover;
+
+transition:.5s;
+
+cursor:pointer;
+
+}
+
+.anime-card:hover .anime-image{
+
+transform:scale(1.08);
+
+}
+
+.anime-content{
+
+padding:25px;
+
+}
+
+.anime-content p{
+
+margin-top:12px;
+line-height:1.8;
+color:var(--text);
+
+}
+
+/* EXPERIENCE */
+
+.experience-card{
+
+max-width:1000px;
+margin:auto;
+
+padding:60px;
+
+text-align:center;
+
+}
+
+.experience-icon{
+
+font-size:3rem;
+
+color:var(--blue);
+
+margin-bottom:25px;
+
+}
+
+.experience-card p{
+
+margin-top:20px;
+
+line-height:2;
+
+color:var(--text);
+
+}
+
+/* WEBSITE */
+
+.website-card{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:60px;
+
+text-align:center;
+
+}
+
+.website-card i{
+
+font-size:3rem;
+
+color:var(--blue);
+
+margin-bottom:20px;
+
+}
+
+.website-card p{
+
+margin-top:20px;
+
+line-height:2;
+
+color:var(--text);
+
+}
+
+/* FOOTER */
+
+footer{
+
+padding:100px 8% 60px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h2{
+
+font-size:3rem;
+
+letter-spacing:4px;
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+color:var(--text);
+
+}
+
+.footer-socials{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin:30px 0;
+
+}
+
+.footer-socials a{
+
+width:60px;
+height:60px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:50%;
+
+text-decoration:none;
+
+font-size:1.3rem;
+
+color:white;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.footer-socials a:hover{
+
+transform:translateY(-5px);
+
+color:var(--blue);
+
+}
+
+.footer-bottom{
+
+margin-top:15px;
+
+}
+
+/* IMAGE MODAL */
+
+#imageModal{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+justify-content:center;
+align-items:center;
+
+background:rgba(0,0,0,.95);
+
+z-index:999999;
+
+}
+
+#modalImage{
+
+max-width:90%;
+max-height:90%;
+
+border-radius:20px;
+
+}
+
+#closeModal{
+
+position:absolute;
+
+top:25px;
+right:40px;
+
+font-size:3rem;
+
+cursor:pointer;
+
+}
+
+/* TOP BUTTON */
+
+#topBtn{
+
+position:fixed;
+
+right:25px;
+bottom:25px;
+
+width:60px;
+height:60px;
+
+border:none;
+
+cursor:pointer;
+
+display:none;
+
+border-radius:50%;
+
+font-size:1.2rem;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#00aaff,
+#0066ff
+);
+
+z-index:99999;
+
+}
+
+@media(max-width:950px){
+
+.anime-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+<script>
+
+/* TYPING */
+
+const words=[
+"BSIT Student",
+"Customer Service Representative",
+"Gamer",
+"Anime Fan",
+"Music Lover",
+"Web Developer"
+];
+
+let wordIndex=0;
+let charIndex=0;
+
+const typing=document.getElementById("typing");
+
+function type(){
+
+if(charIndex<words[wordIndex].length){
+
+typing.textContent+=words[wordIndex].charAt(charIndex);
+
+charIndex++;
+
+setTimeout(type,80);
+
+}else{
+
+setTimeout(erase,1500);
+
+}
+
+}
+
+function erase(){
+
+if(charIndex>0){
+
+typing.textContent=
+words[wordIndex].substring(0,charIndex-1);
+
+charIndex--;
+
+setTimeout(erase,40);
+
+}else{
+
+wordIndex++;
+
+if(wordIndex>=words.length){
+
+wordIndex=0;
+
+}
+
+setTimeout(type,300);
+
+}
+
+}
+
+type();
+
+/* MOBILE MENU */
+
+const menuBtn=document.querySelector(".menu-btn");
+const navLinks=document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click",()=>{
+
+navLinks.classList.toggle("active");
+
+});
+
+/* SCROLL REVEAL */
+
+const observer=
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".hidden")
+.forEach(el=>observer.observe(el));
+
+/* SPOTLIGHT EFFECT */
+
+document.querySelectorAll(".card")
+.forEach(card=>{
+
+card.addEventListener("mousemove",e=>{
+
+const rect=card.getBoundingClientRect();
+
+card.style.setProperty(
+"--x",
+`${e.clientX-rect.left}px`
+);
+
+card.style.setProperty(
+"--y",
+`${e.clientY-rect.top}px`
+);
+
+});
+
+});
+
+/* IMAGE MODAL */
+
+const modal=document.getElementById("imageModal");
+const modalImg=document.getElementById("modalImage");
+
+document.querySelectorAll(".clickable")
+.forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+modal.style.display="flex";
+
+modalImg.src=img.src;
+
+});
+
+});
+
+document
+.getElementById("closeModal")
+.addEventListener("click",()=>{
+
+modal.style.display="none";
+
+});
+
+/* PROGRESS BAR */
+
+window.addEventListener("scroll",()=>{
+
+const winScroll=
+document.documentElement.scrollTop;
+
+const height=
+document.documentElement.scrollHeight-
+document.documentElement.clientHeight;
+
+const scrolled=(winScroll/height)*100;
+
+document.getElementById("progress")
+.style.width=scrolled+"%";
+
+});
+
+/* BACK TO TOP */
+
+const topBtn=
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+};
+
+/* CURSOR LIGHT */
+
+const cursor=document.querySelector(".cursor");
+
+document.addEventListener("mousemove",e=>{
+
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+
+});
+
+/* PARTICLES */
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const particles=[];
+
+for(let i=0;i<80;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2+1,
+dx:(Math.random()-.5)*.5,
+dy:(Math.random()-.5)*.5
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+
+ctx.arc(
+p.x,
+p.y,
+p.r,
+0,
+Math.PI*2
+);
+
+ctx.fillStyle=
+"rgba(0,170,255,.4)";
+
+ctx.fill();
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width) p.dx*=-1;
+if(p.y<0||p.y>canvas.height) p.dy*=-1;
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
